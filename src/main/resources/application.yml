@@ -1,0 +1,7 @@
+spring:
+    application:
+        name: mybootapp6
+    mvc:
+        view:
+            prefix: /WEB-INF/views/
+            suffix: .jsp
