@@ -1,4 +1,4 @@
-package jp.te4a.spring.boot.myapp8.mybootapp8;
+package jp.te4a.spring.boot.myapp9.mybootapp9;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,27 +14,33 @@ public class BookService {
     @Autowired
     BookRepository bookRepository;
 
-    //データはBookFormで扱い、Repositoryを使う時はBookBeanに入れて渡す
-    
-    //追加処理
-    public BookForm create(BookForm bookForm) {
-        bookForm.setId(bookRepository.getBookId());
+    //追加
+    public BookForm save(BookForm bookForm){
         BookBean bookBean = new BookBean();
         BeanUtils.copyProperties(bookForm, bookBean);
-        bookRepository.create(bookBean);
+        bookRepository.save(bookBean);
         return bookForm;
     }
 
-    //更新処理
+    //更新
     public BookForm update(BookForm bookForm) {
         BookBean bookBean = new BookBean();
         BeanUtils.copyProperties(bookForm, bookBean);
-        bookRepository.update(bookBean);
+        bookRepository.save(bookBean);
         return bookForm;
     }
 
-    //削除処理
-    public void delete(Integer id) {  bookRepository.delete(id); }
+    //削除
+    public void delete(Integer id) {
+        bookRepository.deleteById(id);
+    }
+    
+    //1件取得
+    public BookForm findOne(Integer id) {
+        BookForm bookForm = new BookForm();
+        BeanUtils.copyProperties(bookRepository.findById(id), bookForm);
+        return bookForm;
+    }
 
     //取得処理（全件）
     public List<BookForm> findAll() {
@@ -47,14 +53,54 @@ public class BookService {
         }
         return formList;
     }
+    
+
+    //データはBookFormで扱い、Repositoryを使う時はBookBeanに入れて渡す
+    
+    //追加処理
+    /*public BookForm create(BookForm bookForm) {
+        bookForm.setId(bookRepository.getBookId());
+        BookBean bookBean = new BookBean();
+        BeanUtils.copyProperties(bookForm, bookBean);
+        bookRepository.create(bookBean);
+        return bookForm;
+    }
+    */
+
+    //更新処理
+    /*public BookForm update(BookForm bookForm) {
+        BookBean bookBean = new BookBean();
+        BeanUtils.copyProperties(bookForm, bookBean);
+        bookRepository.update(bookBean);
+        return bookForm;
+    }
+    */
+
+    //削除処理
+    /*public void delete(Integer id) {  bookRepository.delete(id); }
+    */
+
+    //取得処理（全件）
+    /*public List<BookForm> findAll() {
+        List<BookBean> beanList = bookRepository.findAll();
+        List<BookForm> formList = new ArrayList<BookForm>();
+        for(BookBean bookBean: beanList) {
+            BookForm bookForm = new BookForm();
+            BeanUtils.copyProperties(bookBean, bookForm);
+            formList.add(bookForm);
+        }
+        return formList;
+    }
+    */
 
     //取得処理（１件）
-    public BookForm findOne(Integer id) {
+    /*public BookForm findOne(Integer id) {
         BookBean bookBean = bookRepository.findOne(id);
         BookForm bookForm = new BookForm();
         BeanUtils.copyProperties(bookBean, bookForm);
         return bookForm;
     }
+    */
 
     //保存処理
     // public BookForm save(BookForm bookForm) {

@@ -1,4 +1,4 @@
-package jp.te4a.spring.boot.myapp8.mybootapp8;
+package jp.te4a.spring.boot.myapp9.mybootapp9;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +14,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
-@RequestMapping("books")
+@RequestMapping("books") // URL:/booksのHTTPリクエストを処理
 public class BookController {
     @Autowired
     BookService bookService;
 
+    // 画面遷移時のデータの受け渡し関数
     @ModelAttribute
     BookForm setUpForm() {
         return new BookForm();
@@ -34,7 +35,7 @@ public class BookController {
     // /books/createにPOST要求
     @PostMapping(path="create")
     String create(BookForm form, Model model) {
-        bookService.create(form);
+        bookService.save(form);
         return "redirect:/books";
     }
 
