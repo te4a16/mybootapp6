@@ -8,10 +8,10 @@
 		<version>3.4.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>jp.te4a.spring.boot.myapp9</groupId>
-	<artifactId>mybootapp9</artifactId>
+	<groupId>jp.te4a.spring.boot.myapp11</groupId>
+	<artifactId>mybootapp11</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>mybootapp9</name>
+	<name>mybootapp11</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -30,15 +30,31 @@
 		<java.version>21</java.version>
 	</properties>
 	<dependencies>
+		<!-- jpa(DBとの接続) -->
 		<dependency>
  			<groupId>org.springframework.boot</groupId>
  			<artifactId>spring-boot-starter-data-jpa</artifactId>
  		</dependency>
+		<!-- h2DBのコネクタ -->
  		<dependency>
  			<groupId>com.h2database</groupId>
  			<artifactId>h2</artifactId>
  			<scope>runtime</scope>
  		</dependency>
+		<!-- エラーチェックのライブラリ -->
+		<!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
+		<dependency>
+			<groupId>org.hibernate.validator</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>8.0.2.Final</version>
+		</dependency>
+		<!-- bootstrap -->
+		<!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
+		<dependency>
+    		<groupId>org.webjars</groupId>
+    		<artifactId>bootstrap</artifactId>
+    		<version>5.3.5</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
