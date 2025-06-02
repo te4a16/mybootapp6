@@ -8,10 +8,10 @@
 		<version>3.4.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>jp.te4a.spring.boot.myapp11</groupId>
-	<artifactId>mybootapp11</artifactId>
+	<groupId>jp.te4a.spring.boot.myapp13</groupId>
+	<artifactId>mybootapp13</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>mybootapp11</name>
+	<name>mybootapp13</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -48,12 +48,40 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>8.0.2.Final</version>
 		</dependency>
-		<!-- bootstrap -->
+		<!-- bootstrap(WEB画面のデザイン用フレームワーク) -->
 		<!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
 		<dependency>
     		<groupId>org.webjars</groupId>
     		<artifactId>bootstrap</artifactId>
     		<version>5.3.5</version>
+		</dependency>
+		<!-- Spring Securityを使用するアプリに必須 -->
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>6.5.0</version>
+		</dependency>
+		<!-- Spring SecurityのJava構成サポート -->
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-config -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>6.5.0</version>
+		</dependency>
+		<!-- Spring Security Web認証サービスとURLベースのアクセス制御 -->
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>6.5.0</version>
+		</dependency>
+		<!-- 認証情報や認可機能にアクセスするためのThymeleafのダイアレクト -->
+		<!-- https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity6 -->
+		<dependency>
+			<groupId>org.thymeleaf.extras</groupId>
+			<artifactId>thymeleaf-extras-springsecurity6</artifactId>
+			<version>3.1.3.RELEASE</version>
 		</dependency>
 
 		<dependency>

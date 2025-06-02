@@ -1,4 +1,6 @@
-package jp.te4a.spring.boot.myapp11.mybootapp11;
+package jp.te4a.spring.boot.myapp13.mybootapp13.form;
+
+import jp.te4a.spring.boot.myapp13.mybootapp13.validata.Writter;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
@@ -13,7 +15,6 @@ public class BookForm {
     private Integer id ;
     @NotNull
     @Size(min = 3)
-    @TestValid(param = "abc")
     private String title;
     @Size(min = 3, max = 20)
     @Writter(ok = "東北タロウ")

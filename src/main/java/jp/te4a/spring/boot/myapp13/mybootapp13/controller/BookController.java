@@ -1,5 +1,7 @@
-package jp.te4a.spring.boot.myapp11.mybootapp11;
+package jp.te4a.spring.boot.myapp13.mybootapp13.controller;
 
+import jp.te4a.spring.boot.myapp13.mybootapp13.service.BookService;
+import jp.te4a.spring.boot.myapp13.mybootapp13.form.BookForm;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,9 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
