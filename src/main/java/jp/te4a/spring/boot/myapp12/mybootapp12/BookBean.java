@@ -1,4 +1,4 @@
-package jp.te4a.spring.boot.myapp11.mybootapp11;
+package jp.te4a.spring.boot.myapp12.mybootapp12;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
