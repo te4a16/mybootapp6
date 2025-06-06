@@ -6,6 +6,7 @@ import jp.te4a.spring.boot.myapp13.mybootapp13.repository.BookRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +43,8 @@ public class BookService {
     //1件取得
     public BookForm findOne(Integer id) {
         BookForm bookForm = new BookForm();
-        BeanUtils.copyProperties(bookRepository.findById(id), bookForm);
+        Optional<BookBean> opt = bookRepository.findById(id);
+        BeanUtils.copyProperties(opt.get(), bookForm);
         return bookForm;
     }
 
